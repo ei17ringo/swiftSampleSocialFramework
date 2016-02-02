@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tapBtn(sender: UIButton) {
+        var twitterVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        twitterVC.setInitialText("つぶやくよ")
+        //message表示
+        presentViewController(twitterVC, animated: true, completion: nil)
+        
+    }
 
+    @IBAction func tapFBBtn(sender: UIButton) {
+        
+        var facebookVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        facebookVC.setInitialText("投稿するよ！")
+        
+        presentViewController(facebookVC, animated: true, completion: nil)
+    }
 }
 
